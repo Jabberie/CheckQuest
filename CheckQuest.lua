@@ -16,24 +16,24 @@ end })
 
 
 local function MyAddonCommands(msg, editbox)
-  myQuestID = string.match(msg,"%d+");
-  myResult = "is |cffff0000Incomplete|r on this character.";
+  local myQuestID = string.match(msg,"%d+")
+  local myResult = "is |cffff0000Incomplete|r on this character."
+  local myQuestName = ""
   
   if (myQuestID == nil) or (myQuestID == '') then
     print("Please enter a Quest ID.")
   elseif myQuestID ~= '' then
     if (IsQuestFlaggedCompleted(myQuestID)) then
-          --myQuestName = QuestTitleFromID(myQuestID)
-          myQuestName = QuestTitleFromID[myQuestI]D;
+          myResult = "has been |cFF00FF00Completed|r on this character."
+          myQuestName = QuestTitleFromID[myQuestID]
           if myQuestName == nil then
-            myQuestName = QuestTitleFromID[myQuestI]D;
-          end
-          myResult = "has been |cFF00FF00Completed|r on this character.";
+            print("CheckQuest: The quest "..myQuestID.." "..myResult)
+          else
+            print("CheckQuest: The quest "..myQuestName.." ("..myQuestID..") "..myResult)
+          end  
     end
-    print("CheckQuest: The quest "..myQuestName.."("..myQuestID..") "..myResult);
-    --print("CheckQuest: The quest ("..myQuestID..") "..myResult);
   else
-    print("You broke it, somehow!");
+    print("You broke it, somehow!")
   end
 end
 
@@ -48,6 +48,3 @@ SlashCmdList["CHECKQUEST"] = MyAddonCommands
 SLASH_RELOADUI1 = "/rl"
 SlashCmdList.RELOADUI = ReloadUI;
 --=====================================================================
-
-
-

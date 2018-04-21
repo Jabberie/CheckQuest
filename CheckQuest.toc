@@ -1,7 +1,7 @@
-## Interface: 70300
+## Interface: 70305
 ## Title: CheckQuest
 ## Notes: CheckQuest
-## Version: 3.0.2
+## Version: 004
 ## X-Category: Interface Enhancements
 
 CheckQuest.lua
