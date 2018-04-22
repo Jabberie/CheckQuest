@@ -24,14 +24,16 @@ local function MyAddonCommands(msg, editbox)
     print("Please enter a Quest ID.")
   elseif myQuestID ~= '' then
     if (IsQuestFlaggedCompleted(myQuestID)) then
-          myResult = "has been |cFF00FF00Completed|r on this character."
-          myQuestName = QuestTitleFromID[myQuestID]
-          if myQuestName == nil then
-            print("CheckQuest: The quest "..myQuestID.." "..myResult)
-          else
-            print("CheckQuest: The quest "..myQuestName.." ("..myQuestID..") "..myResult)
-          end  
-    end
+      myResult = "has been |cFF00FF00Completed|r on this character."
+      myQuestName = QuestTitleFromID[myQuestID]
+      if myQuestName == nil then
+        print("CheckQuest: The quest "..myQuestID.." "..myResult)
+      else
+        print("CheckQuest: The quest "..myQuestName.." ("..myQuestID..") "..myResult)
+      end  
+    else 
+      print("CheckQuest: The quest "..myQuestID.." "..myResult)
+    end  
   else
     print("You broke it, somehow!")
   end
