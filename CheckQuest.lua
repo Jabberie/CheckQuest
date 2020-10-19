@@ -13,8 +13,6 @@ local QuestTitleFromID = setmetatable({}, { __index = function(t, id)
   end
 end })
 
-
-
 local function MyAddonCommands(msg, editbox)
   local myQuestID = string.match(msg,"%d+")
   local myResult = "is |cffff0000Incomplete|r on this character."
@@ -38,9 +36,6 @@ local function MyAddonCommands(msg, editbox)
     print("You broke it, somehow!")
   end
 end
-
-
-
 
 SLASH_CHECKQUEST1, SLASH_CHECKQUEST2 = '/checkquest', '/cq'
 SlashCmdList["CHECKQUEST"] = MyAddonCommands 
