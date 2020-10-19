@@ -23,7 +23,7 @@ local function MyAddonCommands(msg, editbox)
   if (myQuestID == nil) or (myQuestID == '') then
     print("Please enter a Quest ID.")
   elseif myQuestID ~= '' then
-    if (IsQuestFlaggedCompleted(myQuestID)) then
+    if (C_QuestLog.IsQuestFlaggedCompleted(myQuestID)) then
       myResult = "has been |cFF00FF00Completed|r on this character."
       myQuestName = QuestTitleFromID[myQuestID]
       if myQuestName == nil then
