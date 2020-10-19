@@ -1,4 +1,4 @@
-## Interface: 80001
+## Interface: 90001
 ## Title: CheckQuest
 ## Notes: CheckQuest
 ## Version: 006
