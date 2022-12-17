@@ -44,4 +44,6 @@ SlashCmdList["CHECKQUEST"] = MyAddonCommands
 --=====================================================================
 SLASH_RELOADUI1 = "/rl"
 SlashCmdList.RELOADUI = ReloadUI;
+SLASH_FSTACK1 = "/fs"
+SlashCmdList.FSTACK = fstack;
 --=====================================================================

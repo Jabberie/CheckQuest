@@ -1,7 +1,7 @@
-## Interface: 90002
+## Interface: 100002
 ## Title: CheckQuest
 ## Notes: CheckQuest
-## Version: 008
+## Version: 009
 ## X-Category: Interface Enhancements
 
 CheckQuest.lua 
