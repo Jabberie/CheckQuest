@@ -44,6 +44,9 @@ SlashCmdList["CHECKQUEST"] = MyAddonCommands
 --=====================================================================
 SLASH_RELOADUI1 = "/rl"
 SlashCmdList.RELOADUI = ReloadUI;
-SLASH_FSTACK1 = "/fs"
-SlashCmdList.FSTACK = fstack;
+SLASH_FRAMESTK1 = "/fs"; -- for quicker access to frame stack
+SlashCmdList.FRAMESTK = function()
+    LoadAddOn("Blizzard_DebugTools");
+    FrameStackTooltip_Toggle();
+end
 --=====================================================================
