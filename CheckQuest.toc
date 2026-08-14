@@ -1,7 +1,8 @@
-## Interface: 100002
+## Interface: 120100
 ## Title: CheckQuest
-## Notes: CheckQuest
-## Version: 010
+## Notes: Quickly check whether quests have been completed on the current character.
+## Author: Jabberie
+## Version: 1.2.0
 ## X-Category: Interface Enhancements
 
-CheckQuest.lua 
+CheckQuest.lua
