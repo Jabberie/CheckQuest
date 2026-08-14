@@ -50,10 +50,12 @@ Release builds are created automatically from Git tags ending in `_release`.
 For example:
 
 ```text
-1.2.0_release
+12.001_release
 ```
 
 The packaged addon version is derived from the tag, with `_release` removed.
+
+CheckQuest uses expansion-based release numbering: `12` identifies the Midnight expansion, with sequential addon releases numbered `12.001`, `12.002`, and so on.
 
 ## CurseForge
 

@@ -1,7 +1,7 @@
 CheckQuest Changelog
 ====================
 
-1.2.0 - 2026-08-14
+12.001 - 2026-08-14
 ------------------
 Added
 - Support for World of Warcraft 12.1 / Interface 120100.
@@ -20,8 +20,8 @@ Changed
 - Improved handling of uncached quest data.
 - Refreshed addon metadata and documentation.
 
-1.1.0
------
+Legacy / Previous Versions
+--------------------------
 - Modernized quest completion checking using C_QuestLog APIs.
 - Added asynchronous quest-data loading when quest names are not cached.
 - Added /cq shorthand.
