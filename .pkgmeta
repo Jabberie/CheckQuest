@@ -1,0 +1,9 @@
+package-as: CheckQuest
+
+ignore:
+  - .git
+  - .github
+  - .gitignore
+  - .pkgmeta
+  - README.md
+  - "*.zip"
