@@ -5,7 +5,8 @@
 --=====================================================================
 
 local ADDON_NAME = "CheckQuest"
-local ADDON_VERSION = "1.2.0"
+local ADDON_VERSION = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version") or "Unknown"
+local MAX_QUESTS_PER_COMMAND = 50
 local pendingQuests = {}
 
 local COLOR_PREFIX = "|cff33ff99"
@@ -53,7 +54,7 @@ end
 
 local function ShowHelp()
     Print(string.format("Check quest completion with %s/cq <questID>%s.", COLOR_YELLOW, COLOR_RESET))
-    Print("You can check several quests at once: /cq 12345 23456 34567")
+    Print(string.format("Check up to %d quests at once: /cq 12345 23456 34567", MAX_QUESTS_PER_COMMAND))
     Print("Quest IDs can also be pasted from text or a Wowhead URL.")
     Print("Commands: /cq help, /cq version")
 end
@@ -61,16 +62,23 @@ end
 local function ExtractQuestIDs(message)
     local questIDs = {}
     local seen = {}
+    local capped = false
 
     for value in message:gmatch("%d+") do
         local questID = tonumber(value)
+
         if questID and questID > 0 and not seen[questID] then
+            if #questIDs >= MAX_QUESTS_PER_COMMAND then
+                capped = true
+                break
+            end
+
             seen[questID] = true
             questIDs[#questIDs + 1] = questID
         end
     end
 
-    return questIDs
+    return questIDs, capped
 end
 
 local eventFrame = CreateFrame("Frame")
@@ -104,11 +112,15 @@ local function HandleCommand(message)
         return
     end
 
-    local questIDs = ExtractQuestIDs(message)
+    local questIDs, capped = ExtractQuestIDs(message)
     if #questIDs == 0 then
         Print(string.format("No quest ID found. Try %s/cq 12345%s or %s/cq help%s.",
             COLOR_YELLOW, COLOR_RESET, COLOR_YELLOW, COLOR_RESET))
         return
+    end
+
+    if capped then
+        Print(string.format("Only the first %d unique quest IDs will be checked.", MAX_QUESTS_PER_COMMAND))
     end
 
     for _, questID in ipairs(questIDs) do
@@ -131,8 +143,7 @@ SLASH_FRAMESTK1 = "/fs"
 SlashCmdList["FRAMESTK"] = function()
     local loaded, reason = C_AddOns.LoadAddOn("Blizzard_DebugTools")
     if not loaded then
-        Print(string.format("Could not load Blizzard_DebugTools%s.",
-            reason and " (" .. reason .. ")" or ""))
+        Print(string.format("Could not load Blizzard_DebugTools%s.", reason and " (" .. reason .. ")" or ""))
         return
     end
 

@@ -2,7 +2,7 @@
 ## Title: CheckQuest
 ## Notes: Quickly check whether quests have been completed on the current character.
 ## Author: Jabberie
-## Version: 1.2.0
+## Version: @project-version@
 ## X-Category: Interface Enhancements
 
 CheckQuest.lua

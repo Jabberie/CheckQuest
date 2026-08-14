@@ -3,21 +3,28 @@ CheckQuest Changelog
 
 1.2.0 - 2026-08-14
 ------------------
-- Updated for World of Warcraft 12.1 / Interface 120100.
-- Added support for checking multiple quest IDs in one command.
-- Added quest ID extraction from pasted text and URLs.
-- Added /cq help and /cq version commands.
+Added
+- Support for World of Warcraft 12.1 / Interface 120100.
+- Support for checking multiple quest IDs in one command.
+- A 50 unique quest limit per command to prevent accidental bulk requests.
+- Quest ID extraction from pasted text and URLs.
+- /cq help and /cq version commands.
+- Automated GitHub release packaging from *_release tags.
+- /rl shortcut for Reload UI.
+- /fs shortcut for the Blizzard Frame Stack tool.
+
+Changed
+- Addon version is now sourced from the TOC metadata at runtime.
+- Release builds replace @project-version@ automatically during packaging.
 - Improved chat output and status colours.
 - Improved handling of uncached quest data.
-- Added addon author and refreshed metadata.
-- Rewrote the README with current usage and command documentation.
+- Refreshed addon metadata and documentation.
 
 1.1.0
 -----
 - Modernized quest completion checking using C_QuestLog APIs.
 - Added asynchronous quest-data loading when quest names are not cached.
 - Added /cq shorthand.
-- Updated convenience commands for current Retail APIs.
 
 Legacy
 ------
