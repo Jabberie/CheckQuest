@@ -1,6 +1,15 @@
 # CheckQuest
 
-A lightweight World of Warcraft Retail addon for checking whether quests have been completed on the current character.
+CheckQuest is a lightweight World of Warcraft addon for checking whether one or more quests have been completed on the current character.
+
+## Supported clients
+
+The same package supports:
+
+- World of Warcraft Retail 12.1.0
+- WoW Classic Era 1.15.9
+- Burning Crusade Classic Anniversary 2.5.6
+- Mists of Pandaria Classic 5.5.4
 
 ## Usage
 
@@ -17,46 +26,36 @@ Check several quests at once:
 /cq 12345 23456 34567
 ```
 
-CheckQuest accepts up to **50 unique quest IDs per command**. Duplicate IDs are ignored.
+Up to 50 unique quest IDs can be checked with one command. Duplicate IDs are ignored.
 
-Quest IDs can also be extracted from pasted text, including Wowhead quest URLs.
+Quest IDs can also be extracted from pasted text or URLs containing numeric quest IDs.
 
 ## Commands
 
-- `/cq <questID>` — check one quest.
-- `/cq <questID> <questID> ...` — check multiple quests, up to 50 unique IDs.
-- `/checkquest ...` — long-form alias for `/cq`.
-- `/cq help` — show command help.
-- `/cq version` — show the installed addon version.
-- `/rl` — reload the UI.
-- `/fs` — toggle the Blizzard Frame Stack tool.
-
-## Output
-
-CheckQuest prints the quest name and ID when quest data is available, followed by a clear **Completed** or **Incomplete** result.
-
-If quest data is not already cached by the client, CheckQuest requests it and prints the result when the data becomes available.
-
-## Compatibility
-
-- World of Warcraft Retail
-- Patch 12.1
-- Interface 120100
-
-## Releases
-
-Release builds are created automatically from Git tags ending in `_release`.
-
-For example:
-
 ```text
-12.001_release
+/cq help
+/cq version
 ```
 
-The packaged addon version is derived from the tag, with `_release` removed.
+Convenience commands:
 
-CheckQuest uses expansion-based release numbering: `12` identifies the Midnight expansion, with sequential addon releases numbered `12.001`, `12.002`, and so on.
+```text
+/rl    Reload the UI
+/fs    Toggle Blizzard's Frame Stack tool
+```
 
-## CurseForge
+## Results
 
-CheckQuest is available on CurseForge under the CheckQuest project.
+CheckQuest prints each quest name, quest ID, and completion state directly to chat. If the quest name is not cached, the addon requests the quest data and prints the result when it becomes available.
+
+## Installation
+
+Extract the `CheckQuest` folder into your World of Warcraft `Interface/AddOns` directory for the client you use.
+
+## Release versioning
+
+CheckQuest uses expansion-based release numbers. During expansion 12, releases are numbered `12.001`, `12.002`, and so on.
+
+## License
+
+CheckQuest is released under the MIT License. See `LICENSE` for details.

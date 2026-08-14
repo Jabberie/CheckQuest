@@ -48,6 +48,7 @@ jobs:
           cp CheckQuest.lua build/CheckQuest/
           cp CheckQuest.toc build/CheckQuest/
           cp LICENSE build/CheckQuest/
+          cp CHANGES.txt build/CheckQuest/
 
       # -------------------------------------------------------
       # Set packaged addon version
@@ -66,7 +67,8 @@ jobs:
       # └── CheckQuest/
       #     ├── CheckQuest.toc
       #     ├── CheckQuest.lua
-      #     └── LICENSE
+      #     ├── LICENSE
+      #     └── CHANGES.txt
       # -------------------------------------------------------
       - name: Create addon zip
         working-directory: build

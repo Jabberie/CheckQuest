@@ -1,31 +1,39 @@
-CheckQuest Changelog
-====================
+# Changelog
 
-12.001 - 2026-08-14
-------------------
-Added
-- Support for World of Warcraft 12.1 / Interface 120100.
-- Support for checking multiple quest IDs in one command.
-- A 50 unique quest limit per command to prevent accidental bulk requests.
-- Quest ID extraction from pasted text and URLs.
-- /cq help and /cq version commands.
-- Automated GitHub release packaging from *_release tags.
-- /rl shortcut for Reload UI.
-- /fs shortcut for the Blizzard Frame Stack tool.
+All notable changes to CheckQuest will be documented here.
 
-Changed
-- Addon version is now sourced from the TOC metadata at runtime.
-- Release builds replace @project-version@ automatically during packaging.
-- Improved chat output and status colours.
-- Improved handling of uncached quest data.
-- Refreshed addon metadata and documentation.
+## 12.002
 
-Legacy / Previous Versions
---------------------------
-- Modernized quest completion checking using C_QuestLog APIs.
-- Added asynchronous quest-data loading when quest names are not cached.
-- Added /cq shorthand.
+### Added
+- Current multi-client support for WoW Retail 12.1.0, Classic Era 1.15.9, Burning Crusade Classic Anniversary 2.5.6, and Mists of Pandaria Classic 5.5.4.
 
-Legacy
-------
-- Original project history includes the 10.0.2 update released in December 2022.
+### Changed
+- Updated the TOC to advertise all supported client interface versions from one addon package.
+- GitHub release packages now include CHANGES.txt alongside the addon, TOC, and license.
+
+## 12.001
+
+### Added
+- Support for World of Warcraft 12.1.
+- Added support for checking up to 50 unique quest IDs in a single command.
+- Added `/cq help` and `/cq version` commands.
+- Added support for extracting quest IDs from pasted text and Wowhead URLs.
+- Added GitHub Actions release packaging.
+- Added an MIT license.
+
+### Changed
+- Improved quest result formatting and chat output.
+- Duplicate quest IDs are ignored when checking multiple quests.
+- The addon version is read from the TOC metadata.
+- Updated addon metadata and documentation.
+- Adopted expansion-based release numbering.
+
+### Maintained
+- `/cq <questID>` and `/checkquest <questID>` functionality.
+- `/rl` shortcut for Reload UI.
+- `/fs` shortcut for the Frame Stack tool.
+
+## v010 - 2022-12-17
+
+### Changed
+- Updated for World of Warcraft 10.0.2.

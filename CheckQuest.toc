@@ -1,4 +1,4 @@
-## Interface: 120100
+## Interface: 11509, 20506, 50504, 120100
 ## Title: CheckQuest
 ## Notes: Quickly check whether quests have been completed on the current character.
 ## Author: Jabberie
